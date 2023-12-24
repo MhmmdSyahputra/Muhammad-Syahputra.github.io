@@ -10,7 +10,7 @@
 }
 
 .banner {
-  height: 90dvh; /* Sesuaikan dengan tinggi banner Anda */
+  height: 100dvh; /* Sesuaikan dengan tinggi banner Anda */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

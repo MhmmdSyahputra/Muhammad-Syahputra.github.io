@@ -11,7 +11,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <NavbarCompent />
+      <div className="fixed-topmb-4">
+        <NavbarCompent />
+      </div>
       <div
         id="#home"
         className="banner d-flex justify-content-center align-items-center"

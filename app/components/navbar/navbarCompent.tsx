@@ -7,8 +7,8 @@ export const NavbarCompent = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary py-3 ">
-        <div className="container">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary py-3 sticky-top">
+        <div className="container sticky-top">
           <a className="navbar-brand fs-4 fw-medium" href="#">
             Muhammad Syahputra
           </a>
