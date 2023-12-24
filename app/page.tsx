@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <div className="fixed-top mb-5">
-        <div className="" style={{ marginBottom: "800px" }}>
+        <div className="">
           <NavbarCompent />
         </div>
       </div>
@@ -20,6 +20,7 @@ export default function Home() {
         id="#home"
         className="banner d-flex justify-content-center align-items-center"
         style={{
+          paddingTop: "120px",
           backgroundImage: "url('/img/banner.png')",
         }}
       >
@@ -33,10 +34,13 @@ export default function Home() {
                 </span>
               </div>
               <div className="subtitle mb-3">I Am Into Web Developer</div>
-              <button className="btn mbg-primary text-light rounded-5 shadow fw-medium px-5 mb-5 py-2">
+              <a
+                href="#about"
+                className="btn mbg-primary text-light rounded-5 shadow fw-medium px-5 mb-5 py-2"
+              >
                 About Me &ensp;
                 <FaArrowCircleDown />
-              </button>
+              </a>
               <div className="row banner-connect ms-1">
                 <a
                   href="https://www.linkedin.com/in/mhmmdsyahputra/"
