@@ -1,0 +1,4 @@
+.nav-item .active{
+    border-bottom: var(--secondary-color) 2px solid;
+    transition: transform 330ms ease-in-out;
+}

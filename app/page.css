@@ -1,0 +1,56 @@
+.title{
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+.line-mf{
+  width: 50px;
+  height: 5px;
+  background-color: var(--secondary-color);
+  margin: 0 auto;
+}
+
+.banner {
+  height: 90dvh; /* Sesuaikan dengan tinggi banner Anda */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.title-banner {
+  font-size: 2em;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-weight: 600;
+}
+
+.name-title {
+  color: var(--primary-color);
+  font-size: 1.1em;
+  font-family: "Poppins", sans-serif;
+}
+
+.subtitle {
+  font-size: 1.4em;
+  font-family: "Poppins", sans-serif;
+}
+
+.cirle-profile {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-connect .item {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+}
+
+.banner-profile .profile {
+  padding: 3px;
+  border: var(--secondary-color) 2px solid;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+}
