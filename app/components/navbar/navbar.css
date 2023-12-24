@@ -1,4 +1,19 @@
-.nav-item .active{
-    border-bottom: var(--secondary-color) 2px solid;
-    transition: transform 330ms ease-in-out;
+.nav-item .active {
+  border-bottom: var(--secondary-color) 2px solid;
+  transition: transform 330ms ease-in-out;
+}
+
+.navbar {
+  padding: 2rem;
+  transition: background-color 0.3s ease; /* Efek transisi ketika mengubah warna latar belakang */
+}
+
+.transparent {
+  color: var(--secondary-color);
+  background-color: rgba(
+    51,
+    51,
+    51,
+    0.7
+  ); 
 }

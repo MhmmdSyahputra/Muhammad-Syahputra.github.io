@@ -11,8 +11,10 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <div className="fixed-topmb-4">
-        <NavbarCompent />
+      <div className="fixed-top mb-5">
+        <div className="" style={{ marginBottom: "800px" }}>
+          <NavbarCompent />
+        </div>
       </div>
       <div
         id="#home"
