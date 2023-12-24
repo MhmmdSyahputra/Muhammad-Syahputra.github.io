@@ -37,6 +37,7 @@ export default function Home() {
                 <a
                   href="https://www.linkedin.com/in/mhmmdsyahputra/"
                   target="_blank"
+                  aria-label="Linkend"
                   className="item d-flex justify-content-center align-items-center bg-dark text-light fs-5 me-2 shadow-sm"
                 >
                   <FaLinkedin />
@@ -44,6 +45,7 @@ export default function Home() {
                 <a
                   href="https://github.com/MhmmdSyahputra"
                   target="_blank"
+                  aria-label="Github"
                   className="item d-flex justify-content-center align-items-center bg-dark text-light fs-5 me-2 shadow-sm"
                 >
                   <FaGithub />
@@ -51,6 +53,7 @@ export default function Home() {
                 <a
                   href="https://www.instagram.com/mhmmdsyahputra_22/"
                   target="_blank"
+                  aria-label="Instagram"
                   className="item d-flex justify-content-center align-items-center bg-dark text-light fs-5 me-2 shadow-sm"
                 >
                   <FaInstagram />
