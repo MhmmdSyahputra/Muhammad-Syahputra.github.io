@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./navbar.css";
 
 export const NavbarCompent = () => {
@@ -12,6 +12,13 @@ export const NavbarCompent = () => {
       if (scrolled !== isTop) {
         setIsTop(scrolled);
       }
+      const elements = document.querySelectorAll(".section");
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.bottom <= window.innerHeight) {
+          setActive(element.id);
+        }
+      });
     };
 
     document.addEventListener("scroll", handleScroll);
@@ -57,7 +64,6 @@ export const NavbarCompent = () => {
                   } ${isTop ? " text-dark" : " text-light"}`}
                   aria-current="page"
                   href="#"
-                  onClick={() => setActive("home")}
                 >
                   HOME
                 </a>
@@ -68,7 +74,6 @@ export const NavbarCompent = () => {
                     isTop ? " text-dark" : " text-light"
                   }`}
                   href="#about"
-                  onClick={() => setActive("about")}
                 >
                   ABOUT
                 </a>
@@ -76,12 +81,21 @@ export const NavbarCompent = () => {
               <li className="nav-item mx-2">
                 <a
                   className={`nav-link + ${
-                    active === "portfolio" ? " active" : ""
+                    active === "projects" ? " active" : ""
                   } ${isTop ? " text-dark" : " text-light"}`}
-                  href="#portfolio"
-                  onClick={() => setActive("portfolio")}
+                  href="#projects"
                 >
-                  PORTFOLIO
+                  PROJECTS
+                </a>
+              </li>
+              <li className="nav-item mx-2">
+                <a
+                  className={`nav-link + ${
+                    active === "skills" ? " active" : ""
+                  } ${isTop ? " text-dark" : " text-light"}`}
+                  href="#skills"
+                >
+                  SKILLS
                 </a>
               </li>
               <li className="nav-item mx-2">
@@ -89,8 +103,7 @@ export const NavbarCompent = () => {
                   className={`nav-link + ${
                     active === "contact" ? " active " : ""
                   } ${isTop ? " text-dark" : " text-light"}`}
-                  href="#"
-                  onClick={() => setActive("contact")}
+                  href="#contact"
                 >
                   CONTACT
                 </a>

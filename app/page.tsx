@@ -4,11 +4,82 @@ import {
   FaGithub,
   FaInstagram,
   FaArrowCircleDown,
+  FaFacebook,
+  FaWhatsapp,
+  FaReact,
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaPhp,
+  FaNodeJs,
+  FaGit,
 } from "react-icons/fa";
 import "./page.css";
 import Image from "next/image";
 
 export default function Home() {
+  const listSkills = [
+    {
+      name: "HTML",
+      icon: <FaHtml5 className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "CSS",
+      icon: <FaCss3 className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "JS",
+      icon: <FaJs className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "ReactJS",
+      icon: <FaReact className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "PHP",
+      icon: <FaPhp className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "C#",
+      icon: <FaReact className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "Electron",
+      icon: <FaReact className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "MySQL",
+      icon: <FaReact className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "MongoDB",
+      icon: <FaReact className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "NodeJS",
+      icon: <FaNodeJs className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "Flutter",
+      icon: <FaReact className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+    {
+      name: "Git",
+      icon: <FaGit className="display-5 mtext-primary" />,
+      link: "https://react.dev/",
+    },
+  ];
   return (
     <>
       <div className="fixed-top mb-5">
@@ -16,11 +87,14 @@ export default function Home() {
           <NavbarCompent />
         </div>
       </div>
+
+      {/* HOME */}
       <div
-        id="#home"
-        className="banner d-flex justify-content-center align-items-center"
+        id="home"
+        className="section banner d-flex justify-content-center align-items-center"
         style={{
           paddingTop: "120px",
+          marginBottom: "100px",
           backgroundImage: "url('/img/banner.png')",
         }}
       >
@@ -45,7 +119,7 @@ export default function Home() {
                 <a
                   href="https://www.linkedin.com/in/mhmmdsyahputra/"
                   target="_blank"
-                  aria-label="Linkend"
+                  aria-label="Linkendin1"
                   className="item d-flex justify-content-center align-items-center bg-dark text-light fs-5 me-2 shadow-sm"
                 >
                   <FaLinkedin />
@@ -53,18 +127,18 @@ export default function Home() {
                 <a
                   href="https://github.com/MhmmdSyahputra"
                   target="_blank"
-                  aria-label="Github"
+                  aria-label="Github1"
                   className="item d-flex justify-content-center align-items-center bg-dark text-light fs-5 me-2 shadow-sm"
                 >
                   <FaGithub />
                 </a>
                 <a
-                  href="https://www.instagram.com/mhmmdsyahputra_22/"
+                  href="https://wa.me/8887599774"
                   target="_blank"
-                  aria-label="Instagram"
+                  aria-label="Whatsapp1"
                   className="item d-flex justify-content-center align-items-center bg-dark text-light fs-5 me-2 shadow-sm"
                 >
-                  <FaInstagram />
+                  <FaWhatsapp />
                 </a>
               </div>
             </div>
@@ -73,6 +147,7 @@ export default function Home() {
               <div className="banner-profile d-flex justify-content-center">
                 <Image
                   src="/img/myprofile.jpg"
+                  priority
                   className="img-fluid rounded-circle profile"
                   width={300}
                   height={300}
@@ -84,49 +159,120 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="about" className="mb-4">
+      {/* ABOUT ME */}
+      <div
+        id="about"
+        className="section"
+        style={{
+          marginBottom: "100px",
+        }}
+      >
         <div className="container py-4 px-5">
-          <h3 className="text-center title">About Us</h3>
-          <div className="line-mf mb-5 text-center"></div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-          quisquam id illo quidem nam explicabo cupiditate minima reprehenderit,
-          amet necessitatibus beatae laudantium temporibus aperiam nemo
-          blanditiis eaque omnis atque natus obcaecati vel recusandae minus
-          doloribus aspernatur maxime! Incidunt, error repellat optio, aperiam
-          commodi temporibus tempora magnam aspernatur pariatur quod sed ratione
-          perspiciatis iste, est cum eveniet! Architecto libero iure ipsa magni
-          totam. Non quam alias nulla expedita consequatur at iusto ullam nisi
-          saepe voluptate velit voluptatibus, dolores voluptatum aspernatur hic
-          commodi tempora consequuntur cumque? Ducimus eligendi saepe eveniet
-          dignissimos laboriosam enim amet voluptatibus corrupti nostrum
-          pariatur animi cumque necessitatibus sint tempora, facere vero beatae
-          qui quibusdam quasi incidunt! Odio molestiae sequi at iure voluptates
-          magnam deserunt nam corrupti odit natus aut, expedita ea voluptate
-          aperiam, dignissimos omnis veritatis deleniti laboriosam inventore
-          suscipit reiciendis. At aut blanditiis illum minus exercitationem
-          quibusdam aliquid natus aspernatur assumenda reprehenderit
-          accusantium, saepe voluptate similique non laborum! Eos nobis, atque a
-          nulla beatae nesciunt quis nisi ipsam molestias, vitae aspernatur
-          veniam perspiciatis ducimus at aperiam expedita natus? Et ducimus
-          debitis natus magnam sequi quibusdam sint reprehenderit est sed!
-          Aperiam, perspiciatis earum ab voluptatem expedita, sint veritatis
-          natus provident rem eius, a obcaecati quidem tempore molestiae
-          voluptates?
+          <div className="row">
+            <div className="d-none d-lg-block col-lg-5 pe-5">
+              <Image
+                src="/img/aboutme.jpg"
+                className="img-fluid card-img-top"
+                style={{ height: "700px", width: "500px", objectFit: "cover" }}
+                width={300}
+                height={900}
+                alt="Picture of the author"
+              />
+            </div>
+            <div className="col-lg-7 col-md-12 m-auto">
+              <h6 className="mtext-primary fw-medium mb-2">MY INTRO</h6>
+              <h3 className="title">About Me</h3>
+              <div className="line-mf mb-5" style={{ margin: "0" }}></div>
+              <p>
+                Hello! I am Muhammad Syahputra, a student in the field of
+                Information Technology at Mikroskil University in Medan.
+                Currently I am a junior software developer, I am actively
+                developing programming skills with a focus on web, desktop and
+                so on development.
+              </p>
+              <p className="mb-5">
+                As a junior developer, I have been involved in several small
+                projects with web and desktop applications. I have experience in
+                using programming languages such as JavaScript, C#, Python, PHP
+                and am familiar with frameworks such as ReactJS.
+              </p>
+
+              <div>
+                <div className="row mb-3">
+                  <div className="col-lg-3">
+                    <span className="fw-bold fs-6">Name:</span>
+                  </div>
+                  <div className="col">
+                    <span className="fw-medium">Muhammad Syahputra</span>
+                  </div>
+                </div>
+
+                <div className="row mb-3">
+                  <div className="col-lg-3">
+                    <span className="fw-bold fs-6">Date of birth:</span>
+                  </div>
+                  <div className="col">
+                    <span className="fw-medium">January 22, 2003</span>
+                  </div>
+                </div>
+
+                <div className="row mb-3">
+                  <div className="col-lg-3">
+                    <span className="fw-bold fs-6">Address:</span>
+                  </div>
+                  <div className="col">
+                    <span className="fw-medium">Medan, Indonesian</span>
+                  </div>
+                </div>
+
+                <div className="row mb-3">
+                  <div className="col-lg-3">
+                    <span className="fw-bold fs-6">Email:</span>
+                  </div>
+                  <div className="col">
+                    <span className="fw-medium">putramhmmd22@gmail.com</span>
+                  </div>
+                </div>
+
+                <div className="row mb-3">
+                  <div className="col-lg-3">
+                    <span className="fw-bold fs-6">Phone:</span>
+                  </div>
+                  <div className="col">
+                    <span className="fw-medium">0888-759-9774</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div id="portfolio">
-        <div className="container py-4 px-5">
-          <h3 className="text-center title">Portfolio</h3>
+      {/* PROJECTS */}
+      <div
+        id="projects"
+        className="section"
+        style={{
+          marginBottom: "100px",
+        }}
+      >
+        <div className="container py-4">
+          <h3 className="text-center title">Projects</h3>
           <div className="line-mf mb-5 text-center"></div>
           <div className="row d-flex justify-content-center">
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="card item-port shadow border-0">
                 <Image
-                  src="/img/portfolio/vms/picture1.jpeg"
+                  src="/img/projects/vms/picture1.jpeg"
+                  priority
                   className="img-fluid card-img-top"
-                  width={300}
+                  width={700}
                   height={300}
+                  style={{
+                    width: "700px",
+                    height: "300px",
+                    objectFit: "cover",
+                  }}
                   alt="Picture of the author"
                 />
                 <div
@@ -160,10 +306,16 @@ export default function Home() {
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="card item-port shadow border-0">
                 <Image
-                  src="/img/portfolio/vms/picture1.jpeg"
+                  src="/img/projects/vms/picture1.jpeg"
+                  priority
                   className="img-fluid card-img-top"
-                  width={300}
+                  width={700}
                   height={300}
+                  style={{
+                    width: "700px",
+                    height: "300px",
+                    objectFit: "cover",
+                  }}
                   alt="Picture of the author"
                 />
                 <div
@@ -192,6 +344,154 @@ export default function Home() {
                     doloremque tempora! Laborum, ipsum est.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* SKILLS */}
+      <div
+        id="skills"
+        className="section"
+        style={{
+          marginBottom: "100px",
+        }}
+      >
+        <div className="container py-4">
+          <h3 className="text-center title">SKILLS</h3>
+          <div className="line-mf mb-5 text-center"></div>
+          <div className="row d-flex column justify-content-center">
+            {listSkills.map((data, index) => (
+              <div
+                key={index}
+                className="card border border-0 text-center mb-4 col-auto"
+              >
+                <a
+                  href={data.link}
+                  target="_blank"
+                  className="text-decoration-none"
+                  role="link"
+                >
+                  <div className="card-body mborder-primary py-2 text-dark">
+                    <div className="row">
+                      <div className="col m-auto">
+                        <span className="text-start card-title h5">
+                          {data.name}
+                        </span>
+                      </div>
+                      <div className="col m-auto">
+                        <div style={{ width: "100%" }}>{data.icon}</div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Contact */}
+      <div
+        id="contact"
+        className="section"
+        style={{
+          marginBottom: "100px",
+        }}
+      >
+        <div className="container py-4 px-5">
+          <h3 className="text-center title">Contact</h3>
+          <div className="line-mf mb-5 text-center"></div>
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-3 col-md-6 mb-4">
+              <div className="card text-center">
+                <a
+                  href="https://github.com/MhmmdSyahputra"
+                  target="_blank"
+                  className="text-decoration-none"
+                  role="link"
+                >
+                  <div className="card-body mborder-primary text-dark">
+                    <FaGithub className="display-3 mb-4 mtext-primary" />
+                    <div className="card-title h5">Github</div>
+                    <div className="card-subtitle mb-2 text-body-secondary h6">
+                      MhmmdSyahputra
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 mb-4">
+              <div className="card text-center">
+                <a
+                  href="https://www.linkedin.com/in/mhmmdsyahputra/"
+                  target="_blank"
+                  className="text-decoration-none"
+                  role="link"
+                >
+                  <div className="card-body mborder-primary text-dark">
+                    <FaLinkedin className="display-3 mb-4 mtext-primary" />
+                    <div className="card-title h5">Linkedin</div>
+                    <div className="card-subtitle mb-2 text-body-secondary h6">
+                      Muhammad Syahputra
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 mb-4">
+              <div className="card text-center">
+                <a
+                  href="https://www.instagram.com/mhmmdsyahputra_22/"
+                  target="_blank"
+                  className="text-decoration-none"
+                  role="link"
+                >
+                  <div className="card-body mborder-primary text-dark">
+                    <FaInstagram className="display-3 mb-4 mtext-primary" />
+                    <div className="card-title h5">Instagram</div>
+                    <div className="card-subtitle mb-2 text-body-secondary h6">
+                      mhmmdsyahputra_22
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 mb-4">
+              <div className="card text-center">
+                <a
+                  href="https://web.facebook.com/Mhdsyhputrapt"
+                  target="_blank"
+                  className="text-decoration-none"
+                  role="link"
+                >
+                  <div className="card-body mborder-primary text-dark">
+                    <FaFacebook className="display-3 mb-4 mtext-primary" />
+                    <div className="card-title h5">Facebook</div>
+                    <div className="card-subtitle mb-2 text-body-secondary h6">
+                      Muhammad Syahputra
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 mb-4">
+              <div className="card text-center">
+                <a
+                  href="https://wa.me/8887599774"
+                  target="_blank"
+                  className="text-decoration-none"
+                  role="link"
+                >
+                  <div className="card-body mborder-primary text-dark">
+                    <FaWhatsapp className="display-3 mb-4 mtext-primary" />
+                    <div className="card-title h5">WhatsApp</div>
+                    <div className="card-subtitle mb-2 text-body-secondary h6">
+                      +628 8877599774
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
