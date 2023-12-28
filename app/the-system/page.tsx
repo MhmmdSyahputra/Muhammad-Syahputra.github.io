@@ -24,8 +24,8 @@ const Dashboard = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/skills/",
-        // "https://muhammadsyahputra.vercel.app/api/skills"
+        // "http://localhost:3000/api/skills/",
+        "https://muhammadsyahputra.vercel.app/api/skills",
         {
           method: "POST",
           body: formData,
