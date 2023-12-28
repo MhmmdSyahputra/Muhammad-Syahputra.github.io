@@ -17,7 +17,13 @@ import {
 import "./page.css";
 import Image from "next/image";
 
-export default function Home() {
+interface Iskills {
+  _id: string;
+  url_img: string;
+  skill: string;
+}
+
+export default async function Home() {
   const listSkills = [
     {
       name: "HTML",
@@ -80,6 +86,13 @@ export default function Home() {
       link: "https://react.dev/",
     },
   ];
+
+  const resSkills = await fetch(
+    "https://muhammadsyahputra.vercel.app/api/skills"
+  );
+  const data = await resSkills.json();
+  const skills: Iskills[] = data.data;
+
   return (
     <>
       <div className="fixed-top mb-5">
@@ -183,6 +196,15 @@ export default function Home() {
               <h6 className="mtext-primary fw-medium mb-2">MY INTRO</h6>
               <h3 className="title">About Me</h3>
               <div className="line-mf mb-5" style={{ margin: "0" }}></div>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
+                quam molestias quidem incidunt? Nihil ea ducimus illum,
+                accusamus odio reprehenderit nam quos, a fugit minus at labore
+                veniam. Ratione, cupiditate.
+                {skills[0].skill}
+              </p>
+
               <p>
                 Hello! I am Muhammad Syahputra, a student in the field of
                 Information Technology at Mikroskil University in Medan.
@@ -362,13 +384,13 @@ export default function Home() {
           <h3 className="text-center title">SKILLS</h3>
           <div className="line-mf mb-5 text-center"></div>
           <div className="row d-flex column justify-content-center">
-            {listSkills.map((data, index) => (
+            {skills.map((data, index) => (
               <div
                 key={index}
                 className="card border border-0 text-center mb-4 col-auto"
               >
                 <a
-                  href={data.link}
+                  href={data.url_img}
                   target="_blank"
                   className="text-decoration-none"
                   role="link"
@@ -377,11 +399,23 @@ export default function Home() {
                     <div className="row">
                       <div className="col m-auto">
                         <span className="text-start card-title h5">
-                          {data.name}
+                          {data.skill}
                         </span>
                       </div>
                       <div className="col m-auto">
-                        <div style={{ width: "100%" }}>{data.icon}</div>
+                        <Image
+                          src={data.url_img}
+                          priority
+                          className="img-fluid card-img-top"
+                          width={20}
+                          height={20}
+                          style={{
+                            width: "35px",
+                            height: "35px",
+                            objectFit: "cover",
+                          }}
+                          alt="Picture of the author"
+                        />
                       </div>
                     </div>
                   </div>
