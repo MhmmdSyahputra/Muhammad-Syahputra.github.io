@@ -376,44 +376,45 @@ export default async function Home() {
           <h3 className="text-center title">SKILLS</h3>
           <div className="line-mf mb-5 text-center"></div>
           <div className="row d-flex column justify-content-center">
-            {skills.map((data, index) => (
-              <div
-                key={index}
-                className="card border border-0 text-center mb-4 col-auto"
-              >
-                <a
-                  href={data.url_img}
-                  target="_blank"
-                  className="text-decoration-none"
-                  role="link"
+            {skills &&
+              skills.map((data, index) => (
+                <div
+                  key={index}
+                  className="card border border-0 text-center mb-4 col-auto"
                 >
-                  <div className="card-body mborder-primary py-2 text-dark">
-                    <div className="row">
-                      <div className="col m-auto">
-                        <span className="text-start card-title h5">
-                          {data.skill}
-                        </span>
-                      </div>
-                      <div className="col m-auto">
-                        <Image
-                          src={data.url_img}
-                          priority
-                          className="img-fluid card-img-top"
-                          width={20}
-                          height={20}
-                          style={{
-                            width: "35px",
-                            height: "35px",
-                            objectFit: "cover",
-                          }}
-                          alt="Picture of the author"
-                        />
+                  <a
+                    href={data.url_img}
+                    target="_blank"
+                    className="text-decoration-none"
+                    role="link"
+                  >
+                    <div className="card-body mborder-primary py-2 text-dark">
+                      <div className="row">
+                        <div className="col m-auto">
+                          <span className="text-start card-title h5">
+                            {data.skill}
+                          </span>
+                        </div>
+                        <div className="col m-auto">
+                          <Image
+                            src={data.url_img}
+                            priority
+                            className="img-fluid card-img-top"
+                            width={20}
+                            height={20}
+                            style={{
+                              width: "35px",
+                              height: "35px",
+                              objectFit: "cover",
+                            }}
+                            alt="Picture of the author"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </a>
-              </div>
-            ))}
+                  </a>
+                </div>
+              ))}
           </div>
         </div>
       </div>
