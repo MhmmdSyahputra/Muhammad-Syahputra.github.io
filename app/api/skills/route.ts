@@ -1,15 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-// import clientPromise from "./../connectionDB/mongodb";
+import clientPromise from "./../connectionDB/mongodb";
 import { writeFile } from "fs/promises";
-import { MongoClient } from 'mongodb'
 
-const uri = "mongodb+srv://muhammadsyahputra:Og13ArcL29TMpgzK@cluster0.1nwrvd7.mongodb.net/"
-const options = {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-}
-  const client = new MongoClient(uri, options)
-  const clientPromise = client.connect()
 export async function GET() {
   const client = await clientPromise;
   const db = client.db("muhammadsyahputra-web");

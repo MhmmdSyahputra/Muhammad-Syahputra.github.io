@@ -6,9 +6,9 @@ const options = {
   useNewUrlParser: true,
 }
 
-let client
-let clientPromise
+// let client
+// let clientPromise
 
-  client = new MongoClient(uri, options)
-  clientPromise = client.connect()
+ let client = new MongoClient(uri, options)
+  let clientPromise = client.connect()
 export default clientPromise
