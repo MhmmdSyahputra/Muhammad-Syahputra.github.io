@@ -87,12 +87,12 @@ export default async function Home() {
     },
   ];
 
-  // const resSkills = await fetch(
-  //   // "http://localhost:3000/api/skills/"
-  //   "https://muhammadsyahputra.vercel.app/api/skills"
-  // );
-  // const data = await resSkills.json();
-  // const skills: Iskills[] = data.data;
+  const resSkills = await fetch(
+    // "http://localhost:3000/api/skills/"
+    "https://muhammadsyahputra.vercel.app/api/skills"
+  );
+  const data = await resSkills.json();
+  const skills: Iskills[] = data.data;
 
   return (
     <>
@@ -376,7 +376,7 @@ export default async function Home() {
           <h3 className="text-center title">SKILLS</h3>
           <div className="line-mf mb-5 text-center"></div>
           <div className="row d-flex column justify-content-center">
-            {/* {skills &&
+            {skills &&
               skills.map((data, index) => (
                 <div
                   key={index}
@@ -414,7 +414,7 @@ export default async function Home() {
                     </div>
                   </a>
                 </div>
-              ))} */}
+              ))}
           </div>
         </div>
       </div>
