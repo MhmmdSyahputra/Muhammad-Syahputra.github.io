@@ -196,15 +196,6 @@ export default async function Home() {
               <h6 className="mtext-primary fw-medium mb-2">MY INTRO</h6>
               <h3 className="title">About Me</h3>
               <div className="line-mf mb-5" style={{ margin: "0" }}></div>
-
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
-                quam molestias quidem incidunt? Nihil ea ducimus illum,
-                accusamus odio reprehenderit nam quos, a fugit minus at labore
-                veniam. Ratione, cupiditate.
-                {skills[0].skill}
-              </p>
-
               <p>
                 Hello! I am Muhammad Syahputra, a student in the field of
                 Information Technology at Mikroskil University in Medan.
