@@ -10,6 +10,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Muhammad Syahputra",
   description: "Software Engineer",
+  keywords: "CV, Portofolio, Programmer, Muhammad Syahputra, IT, Tehcnologi",
+  category: "CV, Portofolio, Technology",
+  publisher: "Muhammad Syahputra",
+  creator: "Muhammad Syahputra",
+  classification: "Portofolio, CV, Muhammad Syahputra",
 };
 
 export default function RootLayout({
@@ -20,14 +25,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta charSet="UTF-8"></meta>
-        <meta name="description" content="muhammadsyahputra.vercel.app"></meta>
-        <meta
-          name="keywords"
-          content="CV, Portofolio, Programmer, Muhammad Syahputra, IT, Tehcnologi"
-        ></meta>
-        <meta name="author" content="Muhammad Syahputra"></meta>
-
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link
