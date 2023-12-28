@@ -88,7 +88,8 @@ export default async function Home() {
   ];
 
   const resSkills = await fetch(
-    "https://muhammadsyahputra.vercel.app/api/skills"
+    "http://localhost:3000/api/skills/"
+    // "https://muhammadsyahputra.vercel.app/api/skills"
   );
   const data = await resSkills.json();
   const skills: Iskills[] = data.data;
