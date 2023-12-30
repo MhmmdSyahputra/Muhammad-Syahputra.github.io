@@ -60,7 +60,6 @@ export default async function Home() {
         className="section banner d-flex justify-content-center align-items-center"
         style={{
           paddingTop: "120px",
-          marginBottom: "100px",
           backgroundImage: "url('/img/banner.png')",
         }}
       >
@@ -128,9 +127,9 @@ export default async function Home() {
       {/* ABOUT ME */}
       <div
         id="about"
-        className="section"
+        className="section d-flex align-items-center"
         style={{
-          marginBottom: "100px",
+          marginTop: "80px",
         }}
       >
         <div className="container py-4 px-5">
@@ -217,9 +216,9 @@ export default async function Home() {
       {/* PROJECTS */}
       <div
         id="projects"
-        className="section"
+        className="section d-flex align-items-center"
         style={{
-          marginBottom: "100px",
+          marginTop: "80px",
         }}
       >
         <div className="container py-4">
@@ -293,12 +292,12 @@ export default async function Home() {
       {/* SKILLS */}
       <div
         id="skills"
-        className="section"
+        className="section d-flex align-items-center"
         style={{
-          marginBottom: "100px",
+          marginTop: "80px",
         }}
       >
-        <div className="container py-4">
+        <div className="container">
           <h3 className="text-center title">SKILLS</h3>
           <div className="line-mf mb-5 text-center"></div>
           <div className="row d-flex column justify-content-center">
@@ -348,9 +347,9 @@ export default async function Home() {
       {/* Contact */}
       <div
         id="contact"
-        className="section"
+        className="section d-flex align-items-center"
         style={{
-          marginBottom: "100px",
+          marginTop: "80px",
         }}
       >
         <div className="container py-4 px-5">

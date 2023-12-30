@@ -5,6 +5,37 @@ import "./navbar.css";
 export const NavbarCompent = () => {
   const [active, setActive] = useState("home");
   const [isTop, setIsTop] = useState(true);
+  const observer = useRef<IntersectionObserver>();
+
+  // useEffect(() => {
+  //   //create new instance and pass a callback function
+  //   observer.current = new IntersectionObserver((entries) => {
+  //     const visibleSection = entries.find(
+  //       (entry) => entry.isIntersecting
+  //     )?.target;
+  //     //Update state with the visible section ID
+  //     const scrolled = window.scrollY > 0;
+  //     if (scrolled !== isTop) {
+  //       setIsTop(scrolled);
+  //     }
+  //     if (visibleSection) {
+  //       setActive(visibleSection.id);
+  //     }
+  //   });
+
+  //   //Get custom attribute data-section from all sections
+  //   const sections = document.querySelectorAll(".section");
+
+  //   sections.forEach((section) => {
+  //     observer.current?.observe(section);
+  //   });
+  //   //Cleanup function to remove observer
+  //   return () => {
+  //     sections.forEach((section) => {
+  //       observer.current?.unobserve(section);
+  //     });
+  //   };
+  // }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,7 +46,7 @@ export const NavbarCompent = () => {
       const elements = document.querySelectorAll(".section");
       elements.forEach((element) => {
         const rect = element.getBoundingClientRect();
-        if (rect.bottom <= window.innerHeight) {
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
           setActive(element.id);
         }
       });
