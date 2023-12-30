@@ -24,14 +24,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link
-          href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@400;500;700&display=swap"
           rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@400;500;700&display=swap"
+          aria-disabled
         ></link>
-      </head>
+      </Head>
       <body className={inter.className}>
         {children}
         <BootstrapClient />

@@ -57,7 +57,7 @@ export default async function Home() {
       {/* HOME */}
       <div
         id="home"
-        className="section banner d-flex justify-content-center align-items-center"
+        className="section banner d-flex align-items-lg-center align-items-md-start"
         style={{
           paddingTop: "120px",
           backgroundImage: "url('/img/banner.png')",
@@ -75,7 +75,7 @@ export default async function Home() {
               <div className="subtitle mb-3">I Am Into Web Developer</div>
               <a
                 href="#about"
-                className="btn mbg-primary text-light rounded-5 shadow fw-medium px-5 mb-5 py-2"
+                className="btn mbg-primary text-light rounded-5 shadow fw-medium px-5 mb-3 mb-lg-5 py-2"
               >
                 About Me &ensp;
                 <FaArrowCircleDown />
@@ -113,10 +113,19 @@ export default async function Home() {
                 <Image
                   src="/img/myprofile.jpg"
                   priority
-                  className="img-fluid rounded-circle profile"
+                  className="img-fluid rounded-circle profile object-fit-cover "
                   width={300}
                   height={300}
-                  alt="Picture of the author"
+                  // style={{
+                  //   maxWidth: "100%",
+                  //   "@media (max-width: 768px)": {
+                  //     width: "50%",
+                  //   },
+                  //   "@media (max-width: 480px)": {
+                  //     width: "80%",
+                  //   },
+                  // }}
+                  alt="Picture of the profile"
                 />
               </div>
             </div>
@@ -141,7 +150,7 @@ export default async function Home() {
                 style={{ height: "700px", width: "500px", objectFit: "cover" }}
                 width={300}
                 height={900}
-                alt="Picture of the author"
+                alt="Picture of the aboutme"
               />
             </div>
             <div className="col-lg-7 col-md-12 m-auto">
@@ -233,15 +242,15 @@ export default async function Home() {
                       <Image
                         src={data.url_imgs.split(",")[0].trim()}
                         priority
-                        className="img-fluid card-img-top"
+                        className="img-fluid card-img-top lazyload"
                         width={700}
-                        height={300}
+                        height={250}
                         style={{
                           width: "700px",
                           height: "250px",
                           objectFit: "cover",
                         }}
-                        alt="Picture of the author"
+                        alt={"project" + index}
                       />
                     ) : (
                       <Image
@@ -249,13 +258,13 @@ export default async function Home() {
                         priority
                         className="img-fluid card-img-top"
                         width={700}
-                        height={300}
+                        height={250}
                         style={{
                           width: "700px",
                           height: "250px",
                           objectFit: "cover",
                         }}
-                        alt="Picture of the author"
+                        alt="no img"
                       />
                     )}
                     <div
@@ -325,14 +334,14 @@ export default async function Home() {
                             src={data.url_img}
                             priority
                             className="img-fluid card-img-top"
-                            width={20}
-                            height={20}
+                            width={35}
+                            height={35}
                             style={{
                               width: "35px",
                               height: "35px",
                               objectFit: "cover",
                             }}
-                            alt="Picture of the author"
+                            alt={"skill" + index}
                           />
                         </div>
                       </div>

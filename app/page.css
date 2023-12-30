@@ -62,6 +62,29 @@
   -webkit-box-orient: vertical;
 }
 
+.banner-profile .profile{
+  max-width: 100%;
+}
+
+.banner-profile .profile{
+  max-width: 100%;
+}
+
+/* Aturan responsif */
+@media (max-width: 768px) {
+  .banner-profile .profile{
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-profile .profile{
+    width: 150px;
+    height: 150px;
+  }
+}
+
 /* .item-port :hover{
 padding: 20px;
   box-shadow:
