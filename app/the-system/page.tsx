@@ -37,7 +37,7 @@ export default async function Dashboard() {
     <>
       <div className="container bg-light p-5">
         <div className="nav-add mb-4">
-          <p className="d-inline-flex gap-1 me-lg-4">
+          <p className="d-inline-flex gap-1 me-4">
             <button
               className="btn btn-primary btn-lg"
               type="button"

@@ -17,9 +17,8 @@ export const AddProjectComponent = () => {
   const handleSubmitProject = async () => {
     try {
       setloadingSubmit(true);
-      const response = await fetch(`${process.env.API_URL}/api/projects/`, {
+      const response = await fetch(`/api/projects/`, {
         method: "POST",
-        cache: "no-store",
         body: JSON.stringify(dataProject),
       });
 

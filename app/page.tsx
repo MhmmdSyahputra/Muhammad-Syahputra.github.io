@@ -280,7 +280,6 @@ export default async function Home() {
                       </div>
 
                       <p className="card-text fs-6 text-4baris">
-                        {process.env.DB_HOST}
                         {data.desc_project}
                       </p>
                     </div>

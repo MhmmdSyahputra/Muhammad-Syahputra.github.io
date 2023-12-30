@@ -19,7 +19,7 @@ const AddSkillComponent = () => {
     }
 
     try {
-      const response = await fetch(`${process.env.API_URL}/api/skills/`, {
+      const response = await fetch(`/api/skills/`, {
         method: "POST",
         body: formData,
       });

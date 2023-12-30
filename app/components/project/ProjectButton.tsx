@@ -10,12 +10,10 @@ interface ProjectButtonProps {
 
 const ProjectButton: React.FC<ProjectButtonProps> = ({ id, type }) => {
   const handleDeleteProject = async () => {
-    const resProject = await fetch(
-      `${process.env.API_URL}/api/projects/?id=${id}`,
-      {
-        method: "DELETE",
-      }
-    );
+    const resProject = await fetch(`/api/projects/?id=${id}`, {
+      method: "DELETE",
+      next: { revalidate: 3600 },
+    });
     const response = await resProject.json();
     if (response.status === 200) {
       Swal.fire({
