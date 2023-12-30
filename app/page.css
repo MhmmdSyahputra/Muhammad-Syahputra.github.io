@@ -55,6 +55,13 @@
   object-fit: cover;
 }
 
+.text-4baris {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Jumlah baris yang ingin ditampilkan */
+  -webkit-box-orient: vertical;
+}
+
 /* .item-port :hover{
 padding: 20px;
   box-shadow:

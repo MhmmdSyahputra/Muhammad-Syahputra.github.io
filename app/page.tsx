@@ -21,78 +21,30 @@ interface Iskills {
   _id: string;
   url_img: string;
   skill: string;
+  url_skill: string;
+}
+interface Iprojects {
+  _id: string;
+  title_project: string;
+  desc_project: string;
+  location_implemen: string;
+  date_implemen: string;
+  tech: string;
+  url_imgs: string;
 }
 
 export default async function Home() {
-  const listSkills = [
-    {
-      name: "HTML",
-      icon: <FaHtml5 className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "CSS",
-      icon: <FaCss3 className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "JS",
-      icon: <FaJs className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "ReactJS",
-      icon: <FaReact className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "PHP",
-      icon: <FaPhp className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "C#",
-      icon: <FaReact className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "Electron",
-      icon: <FaReact className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "MySQL",
-      icon: <FaReact className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "MongoDB",
-      icon: <FaReact className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "NodeJS",
-      icon: <FaNodeJs className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "Flutter",
-      icon: <FaReact className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-    {
-      name: "Git",
-      icon: <FaGit className="display-5 mtext-primary" />,
-      link: "https://react.dev/",
-    },
-  ];
+  const resSkills = await fetch(`${process.env.API_URL}/api/skills/`, {
+    cache: "no-store",
+  });
+  const dataSkills = await resSkills.json();
+  const skills: Iskills[] = dataSkills.data;
 
-  const resSkills = await fetch(
-    // "http://localhost:3000/api/skills/"
-    "https://muhammadsyahputra.vercel.app/api/skills"
-  );
-  const data = await resSkills.json();
-  const skills: Iskills[] = data.data;
+  const resProject = await fetch(`${process.env.API_URL}/api/projects/`, {
+    cache: "no-store",
+  });
+  const dataprojects = await resProject.json();
+  const projects: Iprojects[] = dataprojects.data;
 
   return (
     <>
@@ -274,92 +226,67 @@ export default async function Home() {
           <h3 className="text-center title">Projects</h3>
           <div className="line-mf mb-5 text-center"></div>
           <div className="row d-flex justify-content-center">
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="card item-port shadow border-0">
-                <Image
-                  src="/img/projects/vms/picture1.jpeg"
-                  priority
-                  className="img-fluid card-img-top"
-                  width={700}
-                  height={300}
-                  style={{
-                    width: "700px",
-                    height: "300px",
-                    objectFit: "cover",
-                  }}
-                  alt="Picture of the author"
-                />
-                <div
-                  className="px-3 pt-2 mtext-primary fw-medium"
-                  style={{ fontSize: "0.9em" }}
-                >
-                  <div className="row">
-                    <div className="col">PT PLN UPDK, Medan</div>
-                    <div className="col text-end">OKTOBER 19, 2023</div>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <div className="card-title h5 mb-1">
-                    Visitor Management System
-                  </div>
-                  <div
-                    className="mtext-primary fw-medium mb-3"
-                    style={{ fontSize: "0.8em" }}
-                  >
-                    Desktop, Electron, ReactJS
-                  </div>
+            {projects &&
+              projects.map((data, index) => (
+                <div key={index} className="col-lg-4 col-md-6 mb-5">
+                  <div className="card item-port shadow-sm border-0">
+                    {data.url_imgs && data.url_imgs.includes(",") ? (
+                      <Image
+                        src={data.url_imgs.split(",")[0].trim()}
+                        priority
+                        className="img-fluid card-img-top"
+                        width={700}
+                        height={300}
+                        style={{
+                          width: "700px",
+                          height: "250px",
+                          objectFit: "cover",
+                        }}
+                        alt="Picture of the author"
+                      />
+                    ) : (
+                      <Image
+                        src="https://cdn.discordapp.com/attachments/999546779882233869/1180033356361105470/no_img.jpg?ex=65a0dcb4&is=658e67b4&hm=61bac247625f664524f44767fcd73912e18304bdf4401267252564af333b0c16&"
+                        priority
+                        className="img-fluid card-img-top"
+                        width={700}
+                        height={300}
+                        style={{
+                          width: "700px",
+                          height: "250px",
+                          objectFit: "cover",
+                        }}
+                        alt="Picture of the author"
+                      />
+                    )}
+                    <div
+                      className="px-3 pt-2 mtext-primary fw-medium"
+                      style={{ fontSize: "0.9em" }}
+                    >
+                      <div className="row">
+                        <div className="col">{data.location_implemen}</div>
+                        <div className="col text-end">{data.date_implemen}</div>
+                      </div>
+                    </div>
+                    <div className="card-body">
+                      <div className="card-title h5 mb-1">
+                        {data.title_project}
+                      </div>
+                      <div
+                        className="mtext-primary fw-medium mb-3"
+                        style={{ fontSize: "0.8em" }}
+                      >
+                        {data.tech}
+                      </div>
 
-                  <p className="card-text fs-6">
-                    Visitor management system atau VMS banyak digunakan pada
-                    gedung-gedung perkantoran untuk mencatat data pengunjung
-                    yang datang.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="card item-port shadow border-0">
-                <Image
-                  src="/img/projects/vms/picture1.jpeg"
-                  priority
-                  className="img-fluid card-img-top"
-                  width={700}
-                  height={300}
-                  style={{
-                    width: "700px",
-                    height: "300px",
-                    objectFit: "cover",
-                  }}
-                  alt="Picture of the author"
-                />
-                <div
-                  className="px-3 pt-2 mtext-primary fw-medium"
-                  style={{ fontSize: "0.9em" }}
-                >
-                  <div className="row">
-                    <div className="col">...</div>
-                    <div className="col text-end">...</div>
+                      <p className="card-text fs-6 text-4baris">
+                        {process.env.DB_HOST}
+                        {data.desc_project}
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className="card-body">
-                  <div className="card-title h5 mb-1">
-                    Scanmatic Gate Access
-                  </div>
-                  <div
-                    className="mtext-primary fw-medium mb-3"
-                    style={{ fontSize: "0.8em" }}
-                  >
-                    Desktop, Electron, ReactJS
-                  </div>
-
-                  <p className="card-text fs-6">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quis similique provident quibusdam harum tenetur nihil
-                    doloremque tempora! Laborum, ipsum est.
-                  </p>
-                </div>
-              </div>
-            </div>
+              ))}
           </div>
         </div>
       </div>
@@ -383,7 +310,7 @@ export default async function Home() {
                   className="card border border-0 text-center mb-4 col-auto"
                 >
                   <a
-                    href={data.url_img}
+                    href={data.url_skill}
                     target="_blank"
                     className="text-decoration-none"
                     role="link"

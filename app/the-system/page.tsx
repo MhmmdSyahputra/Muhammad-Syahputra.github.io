@@ -1,85 +1,144 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
+import { AddProjectComponent } from "../components/project/addProjectComponent";
+import { FaTrash } from "react-icons/fa";
+import ProjectButton from "../components/project/ProjectButton";
+import AddSkillComponent from "../components/skill/AddSkillComponent";
 
-const Dashboard = () => {
-  const [dataSkill, setdataSkill] = useState({
-    skill: "",
-    file: null,
+interface Iskills {
+  _id: string;
+  url_img: string;
+  skill: string;
+  url_skill: string;
+}
+interface Iprojects {
+  _id: string;
+  title_project: string;
+  desc_project: string;
+  location_implemen: string;
+  date_implemen: string;
+  tech: string;
+  url_imgs: string;
+}
+
+export default async function Dashboard() {
+  const resSkills = await fetch(`${process.env.API_URL}/api/skills/`, {
+    cache: "no-store",
   });
+  const dataSkills = await resSkills.json();
+  const skills: Iskills[] = dataSkills.data;
 
-  const handleFileChange = (e: any) => {
-    const file = e.target.files && e.target.files[0];
-    console.log(file);
-
-    setdataSkill({ ...dataSkill, file: file });
-  };
-
-  const handleSubmit = async () => {
-    const formData = new FormData();
-    formData.append("skill", dataSkill.skill);
-
-    if (dataSkill.file) {
-      formData.append("file", dataSkill.file);
-    }
-
-    try {
-      const response = await fetch(
-        // "http://localhost:3000/api/skills/",
-        "https://muhammadsyahputra.vercel.app/api/skills",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const result = await response.json();
-      console.log("Response data:", result);
-
-      setdataSkill({ skill: "", file: null });
-    } catch (error) {
-      console.error("Error during POST request:", error);
-    }
-  };
+  const resProject = await fetch(`${process.env.API_URL}/api/projects/`, {
+    cache: "no-store",
+  });
+  const dataprojects = await resProject.json();
+  const projects: Iprojects[] = dataprojects.data;
 
   return (
     <>
-      <div className="container p-5">
-        <div className="form-group mb-4">
-          <label htmlFor="" className="mb-2">
-            Name Skill
-          </label>
-          <input
-            type="text"
-            onChange={(e) =>
-              setdataSkill({ ...dataSkill, skill: e.target.value })
-            }
-            value={dataSkill.skill}
-            className="form-control form-control-lg"
-          />
+      <div className="container bg-light p-5">
+        <div className="nav-add mb-4">
+          <p className="d-inline-flex gap-1 me-lg-4">
+            <button
+              className="btn btn-primary btn-lg"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseAddskill"
+              aria-expanded="false"
+              aria-controls="collapseAddskill"
+            >
+              Add Skill
+            </button>
+          </p>
+
+          <p className="d-inline-flex gap-1 me-lg-4">
+            <button
+              className="btn btn-primary btn-lg"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseAddProject"
+              aria-expanded="false"
+              aria-controls="collapseAddProject"
+            >
+              Add Project
+            </button>
+          </p>
         </div>
-        <div className="form-group mb-4">
-          <label htmlFor="" className="mb-2">
-            Icon
-          </label>
-          <input
-            type="file"
-            onChange={handleFileChange}
-            className="form-control form-control-lg"
-          />
-          <small className="text-muted">size 256 x 256</small>
+
+        <div className="collapse" id="collapseAddskill">
+          <div className="card card-body">
+            <AddSkillComponent />
+          </div>
         </div>
-        <div className="form-group mb-4">
-          <button className="btn btn-lg btn-success" onClick={handleSubmit}>
-            Save
-          </button>
+
+        <div className="collapse" id="collapseAddProject">
+          <div className="card card-body">
+            <AddProjectComponent />
+          </div>
+        </div>
+
+        <div className="view-skill mb-5">
+          <div className="h3">My Skills</div>
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name Skill</th>
+                <th scope="col">Priority</th>
+                <th scope="col" style={{ width: "100px" }}>
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {skills &&
+                skills.map((data, index) => (
+                  <tr key={index}>
+                    <th scope="row">{index + 1}</th>
+                    <td>{data.skill}</td>
+                    <td>1</td>
+                    <td>
+                      <button className="btn btn-danger">
+                        <FaTrash />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="view-projects mb-5">
+          <div className="h3">My Projects</div>
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name Project</th>
+                <th scope="col">Date Development</th>
+                <th scope="col">Tech</th>
+                <th scope="col">Priority</th>
+                <th scope="col" style={{ width: "100px" }}>
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {projects &&
+                projects.map((data, index) => (
+                  <tr key={index}>
+                    <th scope="row">{index + 1}</th>
+                    <td>{data.title_project}</td>
+                    <td>{data.date_implemen}</td>
+                    <td>{data.tech}</td>
+                    <td>1</td>
+                    <td>
+                      <ProjectButton id={data._id} type="delete" />
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </>
   );
-};
-
-export default Dashboard;
+}
