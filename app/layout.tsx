@@ -4,6 +4,7 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { BootstrapClient } from "./components/BootstrapClietsx";
 import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {children}
+        <SpeedInsights />
         <BootstrapClient />
       </body>
     </html>
