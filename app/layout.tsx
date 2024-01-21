@@ -28,6 +28,10 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <meta
+          name="google-site-verification"
+          content="fg-OAb24ZSqIQ1Vz5PwWO3KRvUiWl7jPTGu0KDFXHQw"
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@400;500;700&display=swap"
