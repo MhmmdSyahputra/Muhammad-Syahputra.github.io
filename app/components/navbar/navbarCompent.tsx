@@ -1,41 +1,12 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import "./navbar.css";
+import { FaBars, FaHamburger } from "react-icons/fa";
 
 export const NavbarCompent = () => {
   const [active, setActive] = useState("home");
   const [isTop, setIsTop] = useState(true);
   const observer = useRef<IntersectionObserver>();
-
-  // useEffect(() => {
-  //   //create new instance and pass a callback function
-  //   observer.current = new IntersectionObserver((entries) => {
-  //     const visibleSection = entries.find(
-  //       (entry) => entry.isIntersecting
-  //     )?.target;
-  //     //Update state with the visible section ID
-  //     const scrolled = window.scrollY > 0;
-  //     if (scrolled !== isTop) {
-  //       setIsTop(scrolled);
-  //     }
-  //     if (visibleSection) {
-  //       setActive(visibleSection.id);
-  //     }
-  //   });
-
-  //   //Get custom attribute data-section from all sections
-  //   const sections = document.querySelectorAll(".section");
-
-  //   sections.forEach((section) => {
-  //     observer.current?.observe(section);
-  //   });
-  //   //Cleanup function to remove observer
-  //   return () => {
-  //     sections.forEach((section) => {
-  //       observer.current?.unobserve(section);
-  //     });
-  //   };
-  // }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,8 +33,8 @@ export const NavbarCompent = () => {
   return (
     <>
       <nav
-        className={`navbar navbar-expand-lg py-3 ${
-          isTop ? "bg-light" : "text-light"
+        className={`navbar navbar-expand-lg py-3 fixed-top ${
+          isTop ? "bg-light" : " bg-lg-transparent"
         }`}
       >
         <div className="container sticky-top">
@@ -76,7 +47,9 @@ export const NavbarCompent = () => {
             Muhammad Syahputra
           </a>
           <button
-            className="navbar-toggler"
+            className={`navbar-toggler border-light${
+              isTop ? "text-light" : " bg-lg-transparent"
+            }`}
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -84,60 +57,74 @@ export const NavbarCompent = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <FaBars className={`m-1 ${isTop ? "text-dark" : " text-light"}`} />
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item mx-2">
                 <a
-                  className={`nav-link + ${
-                    active === "home" ? " active" : ""
-                  } ${isTop ? " text-dark" : " text-light"}`}
+                  className={`nav-link ${isTop ? " text-dark" : " text-light"}`}
                   aria-current="page"
                   href="#"
                 >
                   HOME
                 </a>
+                <div
+                  style={{ width: "40px" }}
+                  className={`ms-lg-2 ${active === "home" ? " active" : ""}`}
+                ></div>
               </li>
               <li className="nav-item mx-2">
                 <a
-                  className={`nav-link ${active === "about" ? " active" : ""} ${
-                    isTop ? " text-dark" : " text-light"
-                  }`}
+                  className={`nav-link ${isTop ? " text-dark" : " text-light"}`}
                   href="#about"
                 >
                   ABOUT
                 </a>
+                <div
+                  style={{ width: "40px" }}
+                  className={`ms-lg-2 ${active === "about" ? " active" : ""}`}
+                ></div>
               </li>
               <li className="nav-item mx-2">
                 <a
-                  className={`nav-link + ${
-                    active === "projects" ? " active" : ""
-                  } ${isTop ? " text-dark" : " text-light"}`}
+                  className={`nav-link ${isTop ? " text-dark" : " text-light"}`}
                   href="#projects"
                 >
                   PROJECTS
                 </a>
+                <div
+                  style={{ width: "40px" }}
+                  className={`ms-lg-2 ${
+                    active === "projects" ? " active" : ""
+                  }`}
+                ></div>
               </li>
               <li className="nav-item mx-2">
                 <a
-                  className={`nav-link + ${
-                    active === "skills" ? " active" : ""
-                  } ${isTop ? " text-dark" : " text-light"}`}
+                  className={`nav-link ${isTop ? " text-dark" : " text-light"}`}
                   href="#skills"
                 >
                   SKILLS
                 </a>
+                <div
+                  style={{ width: "40px" }}
+                  className={`ms-lg-2 ${active === "skills" ? " active" : ""}`}
+                ></div>
               </li>
               <li className="nav-item mx-2">
                 <a
                   className={`nav-link + ${
-                    active === "contact" ? " active " : ""
-                  } ${isTop ? " text-dark" : " text-light"}`}
+                    isTop ? " text-dark" : " text-light"
+                  }`}
                   href="#contact"
                 >
                   CONTACT
                 </a>
+                <div
+                  style={{ width: "40px" }}
+                  className={`ms-lg-2 ${active === "contact" ? " active" : ""}`}
+                ></div>
               </li>
             </ul>
           </div>

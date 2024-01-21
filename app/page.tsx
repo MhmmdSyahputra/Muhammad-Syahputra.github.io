@@ -48,11 +48,11 @@ export default async function Home() {
 
   return (
     <>
-      <div className="fixed-top mb-5">
-        <div className="">
-          <NavbarCompent />
-        </div>
+      {/* <div className=" mb-5"> */}
+      <div className="">
+        <NavbarCompent />
       </div>
+      {/* </div> */}
 
       {/* HOME */}
       <div
